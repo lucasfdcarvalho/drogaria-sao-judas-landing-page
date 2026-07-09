@@ -850,8 +850,9 @@ a:focus-visible {
         height: 36px;
     }
 
-    .cabecalho .botao-whatsapp {
-        width: 100%;
+    .cabecalho .botao-whatsapp,
+    .cabecalho .logotipo {
+        display: none;
     }
 
     .texto-inicio h1 {
