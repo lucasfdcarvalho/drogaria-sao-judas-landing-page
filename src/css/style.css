@@ -54,6 +54,20 @@ ul {
     margin: 0 auto;
 }
 
+#inicio,
+#farmacia-popular,
+#sobre,
+#servicos,
+#produtos,
+#contato {
+    scroll-margin-top: 112px;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--amarelo-principal);
+    outline-offset: 4px;
+}
+
 
 /* BOTÕES */
 
@@ -334,6 +348,105 @@ ul {
 }
 
 
+/* FARMÁCIA POPULAR */
+
+.farmacia-popular {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff8f8 0%, #ffffff 100%);
+}
+
+.conteudo-farmacia-popular {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 48px;
+
+    padding: 48px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 28px;
+    background-color: var(--branco);
+    box-shadow: var(--sombra-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.conteudo-farmacia-popular::before {
+    content: "";
+    width: 180px;
+    height: 180px;
+
+    background-color: var(--vermelho-principal);
+    opacity: 0.06;
+    border-radius: 50%;
+
+    position: absolute;
+    top: -60px;
+    right: -60px;
+}
+
+.selo-farmacia-popular {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+    background:
+        linear-gradient(135deg, rgba(217, 4, 4, 0.08), rgba(255, 208, 0, 0.18));
+}
+
+.selo-farmacia-popular img {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.texto-farmacia-popular {
+    position: relative;
+    z-index: 1;
+}
+
+.texto-farmacia-popular h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.texto-farmacia-popular p {
+    margin-bottom: 24px;
+
+    color: var(--cinza-medio);
+    font-size: 1rem;
+}
+
+.lista-farmacia-popular, .lista-sobre {
+    display: grid;
+    gap: 12px;
+}
+
+.lista-farmacia-popular li,
+.lista-sobre li {
+    position: relative;
+    padding-left: 28px;
+
+    font-weight: 700;
+}
+
+.lista-farmacia-popular li::before,
+.lista-sobre li::before {
+    content: "✓";
+
+    color: var(--vermelho-principal);
+    font-weight: 800;
+
+    position: absolute;
+    left: 0;
+}
+
+
 /* SOBRE */
 
 .sobre {
@@ -370,28 +483,6 @@ ul {
 
     color: var(--cinza-medio);
     font-size: 1rem;
-}
-
-.lista-sobre {
-    display: grid;
-    gap: 12px;
-}
-
-.lista-sobre li {
-    position: relative;
-    padding-left: 28px;
-
-    font-weight: 700;
-}
-
-.lista-sobre li::before {
-    content: "✓";
-
-    color: var(--vermelho-principal);
-    font-weight: 800;
-
-    position: absolute;
-    left: 0;
 }
 
 
@@ -443,6 +534,17 @@ ul {
     margin-bottom: 20px;
 }
 
+.icone-produto {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    margin-bottom: 18px;
+    padding: 10px;
+    border: 1px solid rgba(217, 4, 4, 0.12);
+    border-radius: 16px;
+    background-color: #fff8f8;
+}
+
 .cartao-servico h3,
 .cartao-produto h3 {
     margin-bottom: 10px;
@@ -457,19 +559,12 @@ ul {
 }
 
 .cartao-produto {
-    min-height: 190px;
-
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: flex-start;
 
+    padding: 26px 22px 24px;
     background: linear-gradient(135deg, #ffffff 0%, #fff4f4 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.cartao-produto::before {
-    display: none;
 }
 
 /* CONTATO */
@@ -592,6 +687,7 @@ ul {
     }
 
     .conteudo-inicio,
+    .conteudo-farmacia-popular,
     .conteudo-sobre,
     .conteudo-contato {
         grid-template-columns: 1fr;
@@ -608,6 +704,16 @@ ul {
 }
 
 @media (max-width: 768px) {
+
+    #inicio,
+    #farmacia-popular,
+    #sobre,
+    #servicos,
+    #produtos,
+    #contato {
+        scroll-margin-top: 170px;
+    }
+
     .conteudo-cabecalho {
         height: auto;
         padding: 18px 0;
@@ -631,15 +737,25 @@ ul {
     }
 
     .inicio {
-        padding: 56px 0 80px;
+        padding: 48px 0 56px;
     }
 
-    .conteudo-inicio {
-        gap: 36px;
+    .conteudo-inicio,
+    .conteudo-sobre {
+        gap: 0;
+    }
+
+    .texto-inicio {
+        text-align: left;
     }
 
     .texto-inicio h1 {
         font-size: 2.4rem;
+        margin-bottom: 18px;
+    }
+
+    .texto-inicio p {
+        margin-bottom: 24px;
     }
 
     .botoes-inicio {
@@ -665,6 +781,24 @@ ul {
         padding: 18px;
     }
 
+    .farmacia-popular {
+        padding: 56px 0;
+    }
+
+    .conteudo-farmacia-popular {
+        padding: 32px 24px;
+        gap: 28px;
+    }
+
+    .selo-farmacia-popular {
+        min-height: 180px;
+    }
+
+    .selo-farmacia-popular img {
+        width: 130px;
+        height: 130px;
+    }
+
     .sobre,
     .servicos,
     .produtos,
@@ -672,9 +806,13 @@ ul {
         padding: 64px 0;
     }
 
-    .imagem-inicio img,
-    .imagem-sobre img {
-        height: 320px;
+    .sobre {
+        padding: 56px 0;
+    }
+
+    .imagem-inicio,
+    .imagem-sobre {
+        display: none;
     }
 
     .conteudo-rodape {
@@ -713,47 +851,6 @@ ul {
         flex-direction: column;
     }
 
-    .mapa-contato {
-        padding: 28px 20px;
-    }
-}
-
-/* AJUSTES MOBILE */
-
-@media (max-width: 768px) {
-    .imagem-inicio,
-    .imagem-sobre {
-        display: none;
-    }
-
-    .inicio {
-        padding: 48px 0 56px;
-    }
-
-    .conteudo-inicio,
-    .conteudo-sobre {
-        gap: 0;
-    }
-
-    .texto-inicio {
-        text-align: left;
-    }
-
-    .texto-inicio h1 {
-        margin-bottom: 18px;
-    }
-
-    .texto-inicio p {
-        margin-bottom: 24px;
-    }
-
-    .sobre {
-        padding: 56px 0;
-    }
-}
-
-
-@media (max-width: 480px) {
     .cartao-beneficio img,
     .cartao-servico img {
         display: none;
@@ -764,6 +861,19 @@ ul {
         padding: 22px;
     }
 
+    .conteudo-farmacia-popular {
+        padding: 28px 20px;
+    }
+
+    .texto-farmacia-popular h2 {
+        font-size: 1.8rem;
+    }
+
+    .selo-farmacia-popular img {
+        width: 110px;
+        height: 110px;
+    }
+
     .lista-contato img {
         width: 24px;
         height: 24px;
@@ -772,5 +882,9 @@ ul {
     .botao img {
         width: 20px;
         height: 20px;
+    }
+
+    .mapa-contato {
+        padding: 28px 20px;
     }
 }
