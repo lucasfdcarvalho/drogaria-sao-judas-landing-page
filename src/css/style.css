@@ -209,6 +209,21 @@ a:focus-visible {
 }
 
 
+/* MANIPULAÇÃO JAVASCRIPT */
+
+.cabecalho--rolagem {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.navegacao-lista a.link-ativo::after {
+    width: 100%;
+}
+
+.navegacao-lista a.link-ativo {
+    color: var(--amarelo-principal);
+}
+
+
 /* INÍCIO */
 
 .inicio {
