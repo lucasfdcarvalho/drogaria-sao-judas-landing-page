@@ -1,0 +1,776 @@
+/* RESET E CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho-principal: #d90404;
+    --vermelho-escuro: #8b0000;
+    --amarelo-principal: #ffd000;
+    --verde-whatsapp: #25d366;
+
+    --branco: #ffffff;
+    --cinza-claro: #f7f7f7;
+    --cinza-medio: #666666;
+    --cinza-borda: #e8e8e8;
+    --preto: #151515;
+
+    --sombra-card: 0 12px 30px rgba(0, 0, 0, 0.08);
+    --sombra-botao: 0 8px 18px rgba(217, 4, 4, 0.25);
+
+    --fonte-principal: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cinza-claro);
+    color: var(--preto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.conteiner {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+
+/* BOTÕES */
+
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 14px 24px;
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.botao img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.botao-primario {
+    background-color: var(--vermelho-principal);
+    color: var(--branco);
+    box-shadow: var(--sombra-botao);
+}
+
+.botao-primario:hover {
+    background-color: var(--vermelho-escuro);
+    transform: translateY(-2px);
+}
+
+.botao-contorno {
+    border: 2px solid var(--vermelho-principal);
+    color: var(--vermelho-principal);
+    background-color: var(--branco);
+}
+
+.botao-contorno:hover {
+    background-color: var(--vermelho-principal);
+    color: var(--branco);
+    transform: translateY(-2px);
+}
+
+.botao-whatsapp {
+    background-color: var(--verde-whatsapp);
+    color: var(--branco);
+}
+
+.botao-whatsapp:hover {
+    filter: brightness(0.95);
+    transform: translateY(-2px);
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    width: 100%;
+    background-color: var(--vermelho-principal);
+    color: var(--branco);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.conteudo-cabecalho {
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logotipo-icone {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.logotipo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logotipo-texto span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.logotipo-texto strong {
+    color: var(--amarelo-principal);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.navegacao-lista {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navegacao-lista a {
+    font-size: 0.95rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.navegacao-lista a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--amarelo-principal);
+    border-radius: 999px;
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    transition: 0.3s ease;
+}
+
+.navegacao-lista a:hover::after {
+    width: 100%;
+}
+
+
+/* INÍCIO */
+
+.inicio {
+    background-color: var(--branco);
+    padding: 80px 0 90px;
+}
+
+.conteudo-inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.texto-inicio {
+    max-width: 560px;
+}
+
+.etiqueta-secao {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    color: var(--vermelho-principal);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.texto-inicio h1 {
+    margin-bottom: 24px;
+
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.08;
+    font-weight: 800;
+}
+
+.texto-inicio h1 span {
+    color: var(--vermelho-principal);
+}
+
+.texto-inicio p {
+    margin-bottom: 32px;
+
+    color: var(--cinza-medio);
+    font-size: 1.08rem;
+}
+
+.botoes-inicio {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.imagem-inicio {
+    position: relative;
+}
+
+.imagem-inicio::before {
+    content: "";
+    width: 90%;
+    height: 90%;
+
+    background-color: var(--amarelo-principal);
+    border-radius: 28px;
+
+    position: absolute;
+    right: -16px;
+    bottom: -16px;
+    z-index: 0;
+}
+
+.imagem-inicio img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 28px;
+
+    position: relative;
+    z-index: 1;
+
+    box-shadow: var(--sombra-card);
+}
+
+/* BENEFÍCIOS */
+
+.beneficios {
+    margin-top: -45px;
+    position: relative;
+    z-index: 2;
+}
+
+.conteudo-beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    background-color: var(--branco);
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: var(--sombra-card);
+}
+
+.cartao-beneficio {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 18px;
+    border-radius: 18px;
+    transition: 0.3s ease;
+}
+
+.cartao-beneficio:hover {
+    background-color: #fff6f6;
+    transform: translateY(-4px);
+}
+
+.cartao-beneficio img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cartao-beneficio h3 {
+    margin-bottom: 6px;
+
+    font-size: 1rem;
+    color: var(--preto);
+}
+
+.cartao-beneficio p {
+    color: var(--cinza-medio);
+    font-size: 0.9rem;
+}
+
+
+/* SOBRE */
+
+.sobre {
+    padding: 110px 0 80px;
+}
+
+.conteudo-sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.imagem-sobre img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: var(--sombra-card);
+}
+
+.texto-sobre h2,
+.cabecalho-secao h2,
+.informacoes-contato h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.texto-sobre p {
+    margin-bottom: 24px;
+
+    color: var(--cinza-medio);
+    font-size: 1rem;
+}
+
+.lista-sobre {
+    display: grid;
+    gap: 12px;
+}
+
+.lista-sobre li {
+    position: relative;
+    padding-left: 28px;
+
+    font-weight: 700;
+}
+
+.lista-sobre li::before {
+    content: "✓";
+
+    color: var(--vermelho-principal);
+    font-weight: 800;
+
+    position: absolute;
+    left: 0;
+}
+
+
+/* SERVIÇOS E PRODUTOS */
+
+
+.servicos,
+.produtos {
+    padding: 80px 0;
+}
+
+.servicos {
+    background-color: var(--branco);
+}
+
+.cabecalho-secao {
+    max-width: 680px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.grade-servicos,
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.cartao-servico,
+.cartao-produto {
+    background-color: var(--branco);
+    padding: 30px 24px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 22px;
+    box-shadow: var(--sombra-card);
+
+    transition: 0.3s ease;
+}
+
+.cartao-servico:hover,
+.cartao-produto:hover {
+    transform: translateY(-6px);
+}
+
+.cartao-servico img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.cartao-servico h3,
+.cartao-produto h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+}
+
+.cartao-servico p,
+.cartao-produto p {
+    color: var(--cinza-medio);
+    font-size: 0.95rem;
+}
+
+.cartao-produto {
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(135deg, #ffffff 0%, #fff4f4 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cartao-produto::before {
+    display: none;
+}
+
+/* CONTATO */
+
+.contato {
+    padding: 90px 0;
+    background-color: var(--branco);
+}
+
+.conteudo-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.lista-contato {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.lista-contato li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: var(--cinza-medio);
+    font-weight: 600;
+}
+
+.lista-contato img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.mapa-contato {
+    min-height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 40px;
+    border-radius: 28px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+        repeating-linear-gradient(
+            45deg,
+            #eeeeee 0,
+            #eeeeee 2px,
+            #f8f8f8 2px,
+            #f8f8f8 18px
+        );
+
+    box-shadow: var(--sombra-card);
+    text-align: center;
+}
+
+.mapa-contato > img {
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+}
+
+.mapa-contato h3 {
+    font-size: 1.6rem;
+    color: var(--vermelho-principal);
+}
+
+.mapa-contato p {
+    margin-bottom: 12px;
+    color: var(--cinza-medio);
+}
+
+/* RODAPÉ */
+
+.rodape {
+    padding: 48px 0;
+    background-color: var(--vermelho-escuro);
+    color: var(--branco);
+}
+
+.conteudo-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.rodape p {
+    max-width: 420px;
+    margin-top: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.copia-rodape {
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1024px) {
+    .conteudo-cabecalho {
+        gap: 20px;
+    }
+
+    .navegacao-lista {
+        gap: 18px;
+    }
+
+    .conteudo-beneficios,
+    .grade-servicos,
+    .grade-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .conteudo-inicio,
+    .conteudo-sobre,
+    .conteudo-contato {
+        grid-template-columns: 1fr;
+    }
+
+    .texto-inicio {
+        max-width: 100%;
+    }
+
+    .imagem-inicio img,
+    .imagem-sobre img {
+        height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    .conteudo-cabecalho {
+        height: auto;
+        padding: 18px 0;
+        flex-wrap: wrap;
+    }
+
+    .navegacao {
+        order: 3;
+        width: 100%;
+    }
+
+    .navegacao-lista {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .cabecalho .botao-whatsapp {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+    }
+
+    .inicio {
+        padding: 56px 0 80px;
+    }
+
+    .conteudo-inicio {
+        gap: 36px;
+    }
+
+    .texto-inicio h1 {
+        font-size: 2.4rem;
+    }
+
+    .botoes-inicio {
+        align-items: stretch;
+    }
+
+    .botoes-inicio .botao {
+        width: 100%;
+    }
+
+    .conteudo-beneficios,
+    .grade-servicos,
+    .grade-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .beneficios {
+        margin-top: 0;
+        padding-top: 32px;
+    }
+
+    .conteudo-beneficios {
+        padding: 18px;
+    }
+
+    .sobre,
+    .servicos,
+    .produtos,
+    .contato {
+        padding: 64px 0;
+    }
+
+    .imagem-inicio img,
+    .imagem-sobre img {
+        height: 320px;
+    }
+
+    .conteudo-rodape {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .copia-rodape {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .logotipo-texto strong {
+        font-size: 1.1rem;
+    }
+
+    .logotipo-icone {
+        width: 36px;
+        height: 36px;
+    }
+
+    .cabecalho .botao-whatsapp {
+        width: 100%;
+    }
+
+    .texto-inicio h1 {
+        font-size: 2rem;
+    }
+
+    .texto-inicio p {
+        font-size: 1rem;
+    }
+
+    .cartao-beneficio {
+        flex-direction: column;
+    }
+
+    .mapa-contato {
+        padding: 28px 20px;
+    }
+}
+
+/* AJUSTES MOBILE */
+
+@media (max-width: 768px) {
+    .imagem-inicio,
+    .imagem-sobre {
+        display: none;
+    }
+
+    .inicio {
+        padding: 48px 0 56px;
+    }
+
+    .conteudo-inicio,
+    .conteudo-sobre {
+        gap: 0;
+    }
+
+    .texto-inicio {
+        text-align: left;
+    }
+
+    .texto-inicio h1 {
+        margin-bottom: 18px;
+    }
+
+    .texto-inicio p {
+        margin-bottom: 24px;
+    }
+
+    .sobre {
+        padding: 56px 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .cartao-beneficio img,
+    .cartao-servico img {
+        display: none;
+    }
+
+    .cartao-beneficio,
+    .cartao-servico {
+        padding: 22px;
+    }
+
+    .lista-contato img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .botao img {
+        width: 20px;
+        height: 20px;
+    }
+}
